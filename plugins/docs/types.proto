@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package ncs.protobuf;
+
+option go_package = "github.com/oidc-proxy-ecosystem/proxy-server/plugins";
+
+message values { repeated string value = 1; }

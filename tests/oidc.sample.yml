@@ -1,0 +1,12 @@
+scopes:
+  - email
+  - openid
+  - offline_access
+  - profile
+provider: https://idp.com
+client_id: client_id
+client_secret: client_secret
+callback_url: https://localhost/auth/callback
+logout: https://idp.com/v/logout?https://localhost/auth/login
+audiences:
+  - audiences

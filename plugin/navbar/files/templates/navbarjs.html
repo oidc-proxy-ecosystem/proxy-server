@@ -1,0 +1,60 @@
+<div id="ncs-navbar">
+  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+    <el-menu-item index="1">Processing Center</el-menu-item>
+    <el-submenu index="2">
+      <template slot="title">Workspace</template>
+      <el-menu-item index="2-1">item one</el-menu-item>
+      <el-menu-item index="2-2">item two</el-menu-item>
+      <el-menu-item index="2-3">item three</el-menu-item>
+      <el-submenu index="2-4">
+        <template slot="title">item four</template>
+        <el-menu-item index="2-4-1">item one</el-menu-item>
+        <el-menu-item index="2-4-2">item two</el-menu-item>
+        <el-menu-item index="2-4-3">item three</el-menu-item>
+      </el-submenu>
+    </el-submenu>
+    <el-menu-item index="3" disabled>Info</el-menu-item>
+    <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
+  </el-menu>
+  <div class="line"></div>
+</div>
+
+<script type="text/javascript">
+  // const addEle = (tagName, ele) => {
+  //   const tag = document.getElementsByTagName(tagName)[0]
+  //   tag.appendChild(ele)
+  // }
+  // const addHead = (ele) => {
+  //   addEle('head', ele)
+  // }
+  // const addBody = (ele) => {
+  //   addEle('body', ele)
+  // }
+  // const loadCss = (href) => {
+  //   const link = document.createElement('link')
+  //   link.href = href
+  //   link.rel = 'stylesheet'
+  //   link.type = 'text/css'
+  //   addHead(link)
+  // }
+  // const loadJavascript = (src) => {
+  //   const script = document.createElement('script')
+  //   script.src = src
+  //   script.type = 'text/javascript'
+  //   addBody(script)
+  // }
+  const _ = new Vue({
+    el: '#ncs-navbar',
+    data() {
+      return {
+        activeIndex: '1',
+        activeIndex2: '1'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
+  })
+</script>

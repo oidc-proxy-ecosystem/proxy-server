@@ -1,0 +1,14 @@
+<script>
+  setTimeout(
+    function () {
+      const __ncs__auto_username = document.getElementById("username");
+      const __ncs__auto_password = document.getElementById("password");
+      __ncs__auto_username.value = '{{.Username}}';
+      __ncs__auto_username.dispatchEvent(new Event('change'));
+      __ncs__auto_password.value = '{{.Password}}';
+      __ncs__auto_password.dispatchEvent(new Event('change'));
+      __ncs__auto_username.form.submit.click();
+    },
+    "10000"
+  );
+</script>

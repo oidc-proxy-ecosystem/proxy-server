@@ -1,0 +1,7 @@
+tests
+.devcontainer
+.vscode
+plugin/hello
+plugin/modify
+plugins/docs
+bin

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "types.proto";
+
+package ncs.protobuf;;
+
+option go_package = "github.com/oidc-proxy-ecosystem/proxy-server/plugins";
+
+message Interface {
+    string URL = 1;
+    map<string, values> header = 2;
+    config config = 3;
+}
+
+message config {
+    string directory = 1;
+	string loadbalancer = 2;
+	string config = 3;
+	string oidc = 4;
+	string saml = 5;
+	string auth = 6;
+	string menu = 7;
+}
+
+message Reply {
+    string URL = 1;
+    map<string, values> header = 2;
+    int32 status = 3;
+    string errorMessage = 4;
+}
+
+service Transport {
+    rpc Transport(Interface) returns (Reply) {}
+}
+

@@ -1,0 +1,5 @@
+path: path
+login: login
+callback: callback
+logout: logout
+userinfo: userinfo

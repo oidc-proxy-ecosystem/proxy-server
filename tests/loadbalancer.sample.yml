@@ -1,0 +1,15 @@
+- domain: test1.example.com
+  locations:
+    - path: /a/*all
+      token_type: id_token
+      upstream: 
+        - backend1
+      rewrite:
+        "^/a/*": "/v1/$1"
+  upstream:
+    - name: backend1
+      url: "https://locahost:8080"
+      weight: 0.5
+    - name: backend2
+      url: "https://locahost:8081"
+      weight: 0.5

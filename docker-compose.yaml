@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  proxy-server-dev:
+    build:
+      dockerfile: .devcontainer/Dockerfile
+      context: .
+    tty: true
+    container_name: proxy-server-dev
+    volumes:
+      - .:/src/:delegated
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/.ssh:/root/.ssh
+      - ~/.gitconfig:/root/.gitconfig
+    environment:
+      TZ: Asia/Tokyo
+    networks:
+      - proxy-server-net
+networks:
+  default:
+    name: bridge
+  proxy-server-net:
+    name: proxy-server-net
+    driver: bridge

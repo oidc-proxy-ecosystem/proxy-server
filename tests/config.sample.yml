@@ -1,0 +1,8 @@
+redis_endpoints:
+  - localhost:6379
+redis_username: username
+redis_password: password
+cert_file: ssl/server.crt
+key_file: ssl/server.key
+port: 8443
+log_level: info

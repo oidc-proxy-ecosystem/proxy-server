@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ncs.protobuf;
+
+import "types.proto";
+
+option go_package = "github.com/oidc-proxy-ecosystem/proxy-server/plugins";
+
+message Input {
+    string URL = 1;
+    string method = 2;
+    map<string, values> header = 3;
+    bytes body = 4;
+}
+
+message Output {
+    map<string, values> header = 1;
+    bytes body = 2;
+}
+
+service Response {
+    rpc Modify(stream Input) returns (stream Output) {}
+}
